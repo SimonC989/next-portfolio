@@ -1,0 +1,51 @@
+.photoGroup {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.avatar {
+  /* position: absolute; */
+  width: 250px;
+  height: 250px;
+  left: 30px;
+  top: 0px;
+  background: #64748B;
+  border-radius: 20px;
+}
+
+.avatarBg {
+  /* position: absolute; */
+  width: 250px;
+  height: 250px;
+  left: 0px;
+  top: 30px;
+
+  background: #334155;
+  border-radius: 20px;
+}
+
+/*********************************************************************
+
+  Intro
+
+**********************************************************************/
+
+.intro {
+  background-color: var(--mantine-color-dark-7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 640px;
+  padding: 32px;
+  gap: 24px;
+  border-radius: 20px;
+}
+
+.icon {
+  width: 100%;
+}
