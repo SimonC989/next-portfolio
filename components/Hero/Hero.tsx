@@ -1,9 +1,12 @@
 import { ActionIcon, Anchor, Box, Group, Text, Title, Tooltip } from '@mantine/core';
 import React from 'react';
 import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin, IconArrowDown } from '@tabler/icons';
+import Image from 'next/image';
 import styles from './Hero.module.css';
+import ProfilePhoto from '../../lib/Assets/Simon.jpeg';
+import SocialGroup from './SocialGroup/SocialGroup';
 
-const Hero = () => (
+const Hero: React.FC = () => (
   <Box
     sx={(theme) => ({
       display: 'flex',
@@ -12,12 +15,15 @@ const Hero = () => (
       justifyContent: 'center',
       alignItems: 'center',
       gap: '160px',
+      marginTop: '88px',
       height: 'calc(100vh - 88px)',
     })}
   >
     <div className={styles.photoGroup}>
+      <div style={{ position: 'relative', width: '400px', height: '400px' }}>
+        <Image src={ProfilePhoto} layout="fill" objectFit="cover" style={{ borderRadius: '20px', zIndex: 1 }} />
+      </div>
       <div className={styles.avatarBg} />
-      <div className={styles.avatar} />
     </div>
     <div className={styles.intro}>
       <Title>
@@ -27,49 +33,10 @@ const Hero = () => (
       </Title>
       <Text size="lg">
         I&#39;m an aspiring developer aiming to create a great user experience.
-        Most of my skills lie in Front-End developement, but I have had some Full-stack experience.
+        Most of my skills are in Front-End developement, but I have had some Full-stack experience.
       </Text>
       <div className={styles.icon}>
-        <Group
-          position="center"
-          spacing="xl"
-          sx={(theme) => ({
-            padding: theme.spacing.md,
-          })}
-        >
-          <Tooltip label="GitHub">
-            <ActionIcon
-              color="dark.2"
-              variant="subtle"
-              size="lg"
-              sx={(theme) => ({ '&:hover': { backgroundColor: theme.colors.dark[5] } })}
-              component="a"
-              href="https://github.com/SimonC989"
-            >
-              <IconBrandGithub size={48} />
-            </ActionIcon>
-          </Tooltip>
-          <Tooltip label="GitLab">
-            <ActionIcon
-              color="dark.2"
-              variant="subtle"
-              size="lg"
-              sx={(theme) => ({ '&:hover': { backgroundColor: theme.colors.dark[5] } })}
-            >
-              <IconBrandGitlab size={48} />
-            </ActionIcon>
-          </Tooltip>
-          <Tooltip label="LinkedIn">
-            <ActionIcon
-              color="dark.2"
-              variant="subtle"
-              size="lg"
-              sx={(theme) => ({ '&:hover': { backgroundColor: theme.colors.dark[5] } })}
-            >
-              <IconBrandLinkedin size={48} />
-            </ActionIcon>
-          </Tooltip>
-        </Group>
+        <SocialGroup />
         <Anchor href="#projects" underline={false} color="dark.3">
           <Group position="center" spacing={0}>
             <Text size="sm">

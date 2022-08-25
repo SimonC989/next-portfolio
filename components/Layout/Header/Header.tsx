@@ -13,18 +13,15 @@ const Header: React.FC = () => (
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[1],
         color: theme.colorScheme === 'dark' ? theme.white : theme.colors.dark[5],
         padding: `${theme.spacing.md}px 60px ${theme.spacing.md}px`,
-        position: 'sticky',
+        position: 'fixed',
         top: 0,
         height: '88px',
+        width: '100%',
+        zIndex: 2,
       })}
     >
-      <Group
-        position="apart"
-        // sx={(theme) => ({
-        //   height: '44px',
-        // })}
-      >
-        <Text size="xl">Simon Chan</Text>
+      <Group position="apart">
+        <Text size="xl">Header</Text>
         <Group>
           <HeaderButton href="#top">Home</HeaderButton>
           <HeaderButton href="#projects">Projects</HeaderButton>

@@ -1,29 +1,18 @@
 .photoGroup {
-  width: 280px;
-  height: 280px;
-  position: relative;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.avatar {
-  /* position: absolute; */
-  width: 250px;
-  height: 250px;
-  left: 30px;
-  top: 0px;
-  background: #64748B;
-  border-radius: 20px;
+  width: 440px;
+  height: 440px;
+  /* position: relative; */
+  /* flex: none; */
+  /* order: 0; */
+  /* flex-grow: 0; */
 }
 
 .avatarBg {
-  /* position: absolute; */
-  width: 250px;
-  height: 250px;
-  left: 0px;
-  top: 30px;
-
+  position: relative;
+  width: 400px;
+  height: 400px;
+  right: 40px;
+  top: -360px;
   background: #334155;
   border-radius: 20px;
 }
