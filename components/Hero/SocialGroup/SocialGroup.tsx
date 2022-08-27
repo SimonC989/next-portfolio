@@ -31,7 +31,7 @@ const SocialGroup: React.FC = () => {
         })}
       >
         {list.map(social =>
-          <Tooltip label={social.label}>
+          <Tooltip label={social.label} key={social.label}>
             <ActionIcon
               color="dark.2"
               variant="subtle"

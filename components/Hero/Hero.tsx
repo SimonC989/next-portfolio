@@ -1,9 +1,9 @@
-import { ActionIcon, Anchor, Box, Group, Text, Title, Tooltip } from '@mantine/core';
+import { ActionIcon, Anchor, Box, Group, Text, Title } from '@mantine/core';
 import React from 'react';
-import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin, IconArrowDown } from '@tabler/icons';
+import { IconArrowDown } from '@tabler/icons';
 import Image from 'next/image';
 import styles from './Hero.module.css';
-import ProfilePhoto from '../../lib/Assets/Simon.jpeg';
+import ProfilePhoto from '../../Assets/Simon.jpeg';
 import SocialGroup from './SocialGroup/SocialGroup';
 
 const Hero: React.FC = () => (

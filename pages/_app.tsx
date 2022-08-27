@@ -24,7 +24,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
       dark: ['#F8FAFC', '#F1F5F9', '#E2E8F0', '#CBD5E1', '#94A3B8', '#64748B', '#475569', '#334155', '#1E293B', '#0F172A'],
     },
     primaryColor: 'cyan',
-    // white: '#faf3e1',
   };
 
   return (
