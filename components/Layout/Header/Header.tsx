@@ -7,7 +7,7 @@ import HeaderButton from './HeaderButton';
 //   padding: `${theme.spacing.md}px ${theme.spacing.xl}px ${theme.spacing.md}px`,
 // });
 
-const Header: React.FC = () => (
+const Header: React.FC = (): JSX.Element => (
     <Box
       sx={(theme) => ({
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[1],

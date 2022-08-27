@@ -6,7 +6,7 @@ import styles from './Hero.module.css';
 import ProfilePhoto from '../../Assets/Simon.jpeg';
 import SocialGroup from './SocialGroup/SocialGroup';
 
-const Hero: React.FC = () => (
+const Hero: React.FC = (): JSX.Element => (
   <Box
     sx={(theme) => ({
       display: 'flex',
@@ -21,7 +21,7 @@ const Hero: React.FC = () => (
   >
     <div className={styles.photoGroup}>
       <div style={{ position: 'relative', width: '400px', height: '400px' }}>
-        <Image src={ProfilePhoto} layout="fill" objectFit="cover" style={{ borderRadius: '20px', zIndex: 1 }} />
+        <Image src={ProfilePhoto} layout="fill" objectFit="cover" style={{ borderRadius: '20px', zIndex: 1 }} priority />
       </div>
       <div className={styles.avatarBg} />
     </div>
