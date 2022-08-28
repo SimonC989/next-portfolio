@@ -1,21 +1,34 @@
+import { Carousel } from '@mantine/carousel';
 import { Box, Title, Modal, Button, Center } from '@mantine/core';
-import Image, { StaticImageData } from 'next/image';
-import React, { useState } from 'react';
+import { EmblaCarouselType } from 'embla-carousel-react';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import { projectList } from '../../lib/projectList';
-import Project from './Project/Project';
+import Project, { IModalCarousel } from './Project/Project';
 
-export interface IModal {
-  image: string | StaticImageData,
-  alt: string,
+export function useAnimationOffsetEffect(transitionDuration: number, embla?: EmblaCarouselType) {
+  useEffect(() => {
+    if (embla) {
+      window.setTimeout(() => {
+        embla.reInit();
+      }, transitionDuration);
+    }
+  }, [embla, transitionDuration]);
 }
 
-const Projects: React.FC = () => {
+const Projects: React.FC = (): JSX.Element => {
   const [amountShown, setAmountShown] = useState(3);
   const [active, setActive] = useState(false);
-  const [modalImage, setModalImage] = useState<IModal>({
-    image: '',
-    alt: '',
-  });
+  const [modalCarousel, setModalCarousel] = useState<IModalCarousel[]>([
+    {
+      image: 's',
+      alt: 's',
+    },
+  ]);
+  const [embla, setEmbla] = useState<EmblaCarouselType>();
+  const TRANSITION_DURATION = 200;
+
+  useAnimationOffsetEffect(TRANSITION_DURATION, embla);
 
   const showMore = () => {
     setAmountShown(projectList.length);
@@ -40,7 +53,7 @@ const Projects: React.FC = () => {
       {projectList.slice(0, amountShown).map((project, i) => (
         <Project
           project={project}
-          setModalImage={setModalImage}
+          setModalCarousel={setModalCarousel}
           setActive={setActive}
           key={project.title}
           index={i}
@@ -49,11 +62,30 @@ const Projects: React.FC = () => {
       <Modal
         opened={active}
         onClose={() => setActive(false)}
-        title={modalImage.alt}
+        // title={}
         centered
         size="80%"
+        transitionDuration={TRANSITION_DURATION}
       >
-        <Image src={modalImage.image} alt={modalImage.alt} height={900} width={1600} />
+        <Carousel
+          getEmblaApi={setEmbla}
+          withIndicators
+          slideGap="sm"
+          styles={{
+            control: {
+              '&[data-inactive]': {
+                opacity: 0,
+                cursor: 'default',
+              },
+            },
+          }}
+        >
+          {modalCarousel?.map((image, i) =>
+            <Carousel.Slide key={i}>
+              <Image src={image.image} height={900} width={1600} />
+            </Carousel.Slide>
+          )}
+        </Carousel>
       </Modal>
       <Center mb="md">
         {amountShown === 3 ? (
