@@ -1,11 +1,7 @@
-import { Box, Group, Text } from '@mantine/core';
+import { Box, Group, Title } from '@mantine/core';
 import React from 'react';
 import { ColorSchemeToggle } from '../../ColorSchemeToggle/ColorSchemeToggle';
 import HeaderButton from './HeaderButton';
-
-// const styles = (theme: MantineTheme): CSSObject => ({
-//   padding: `${theme.spacing.md}px ${theme.spacing.xl}px ${theme.spacing.md}px`,
-// });
 
 const Header: React.FC = (): JSX.Element => (
     <Box
@@ -21,9 +17,9 @@ const Header: React.FC = (): JSX.Element => (
       })}
     >
       <Group position="apart">
-        <Text size="xl">Header</Text>
+        <Title size="h2" weight={600}>Simon Chan</Title>
         <Group>
-          <HeaderButton href="#top">Home</HeaderButton>
+          <HeaderButton href="#home">Home</HeaderButton>
           <HeaderButton href="#projects">Projects</HeaderButton>
           <HeaderButton href="#test">Test</HeaderButton>
           <ColorSchemeToggle />

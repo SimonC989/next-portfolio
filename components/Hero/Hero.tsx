@@ -8,6 +8,7 @@ import SocialGroup from './SocialGroup/SocialGroup';
 
 const Hero: React.FC = (): JSX.Element => (
   <Box
+    id="home"
     sx={(theme) => ({
       display: 'flex',
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.dark[3],

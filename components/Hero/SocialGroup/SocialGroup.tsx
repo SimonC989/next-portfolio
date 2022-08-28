@@ -2,7 +2,7 @@ import React from 'react';
 import { ActionIcon, Group, Tooltip } from '@mantine/core';
 import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin } from '@tabler/icons';
 
-const SocialGroup: React.FC = () => {
+const SocialGroup: React.FC = (): JSX.Element => {
   const list = [
     {
       label: 'GitHub',

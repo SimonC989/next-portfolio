@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header/Header';
 
-type Props = {
+type LayoutProps = {
   children?: React.ReactNode,
 };
 
-const Layout: React.FC<Props> = ({ children }): JSX.Element => (
+const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => (
     <>
       <Header />
       <main>{children}</main>

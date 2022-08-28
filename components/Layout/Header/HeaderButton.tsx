@@ -12,7 +12,6 @@ const HeaderButton: React.FC<Props> = ({ href, children }) => (
     size="lg"
     styles={(theme) => ({
       root: {
-        // backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.dark[3],
         color: theme.colorScheme === 'dark' ? theme.white : theme.colors.dark[5],
         '&:hover': {
           backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[2],

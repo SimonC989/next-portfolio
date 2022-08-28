@@ -30,14 +30,12 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     <>
       <Head>
         <title>Portfolio</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <meta
-          name="description"
-          content="Portfolio presenting projects done by Simon Chan"
-        />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta name="description" content="Portfolio presenting projects done by Simon Chan" />
+        <meta property="og:title" content="Portfolio" />
+        <meta property="og:image" content="Portfolio.png" />
+        {/* <meta property="og:description" content="Description that will show in the preview" /> */}
+        {/* <meta property="og:url" content="//www.example.com/URL of the article" /> */}
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
 

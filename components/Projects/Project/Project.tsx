@@ -9,14 +9,21 @@ export type IModalCarousel = {
   alt: string,
 };
 
-interface Props {
+interface IProjectProps {
   project: IProjectList,
   setModalCarousel: React.Dispatch<React.SetStateAction<IModalCarousel[]>>,
   setActive: React.Dispatch<React.SetStateAction<boolean>>,
   index: number,
 }
 
-const Project: React.FC<Props> = ({ project, setModalCarousel, setActive, index }): JSX.Element => (
+const Project: React.FC<IProjectProps> = (
+    {
+      project,
+      setModalCarousel,
+      setActive,
+      index,
+    }
+  ): JSX.Element => (
   <Box
     sx={() => ({
       display: 'flex',
@@ -44,7 +51,7 @@ const Project: React.FC<Props> = ({ project, setModalCarousel, setActive, index 
         styles={(theme) => ({
           control:
             {
-              color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[4],
+              color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[3],
               paddingTop: '8px',
             },
         })}
@@ -64,7 +71,7 @@ const Project: React.FC<Props> = ({ project, setModalCarousel, setActive, index 
                   size="lg"
                   sx={(theme) => ({ '&:hover': { backgroundColor: theme.colors.dark[5] } })}
                   component="a"
-                  href={github.repo}
+                  href={github.link}
                   mt="sm"
                 >
                   <IconBrandGithub size={48} />
