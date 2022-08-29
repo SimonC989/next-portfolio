@@ -73,6 +73,12 @@ const ContactForm: React.FC = (): JSX.Element => {
           onChange={handleChange}
           required
           mb="md"
+          sx={(theme) => ({
+            input: {
+              '&::placeholder': { color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[5] },
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[3],
+            },
+          })}
         />
         <TextInput
           type="email"
@@ -84,6 +90,12 @@ const ContactForm: React.FC = (): JSX.Element => {
           onChange={handleChange}
           required
           mb="md"
+          sx={(theme) => ({
+            input: {
+              '&::placeholder': { color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[5] },
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[3],
+            },
+          })}
         />
         <Textarea
           placeholder="Say Hi! Let me know you're favorite boardgame."
@@ -95,6 +107,12 @@ const ContactForm: React.FC = (): JSX.Element => {
           maxRows={6}
           required
           mb="xl"
+          styles={(theme) => ({
+            input: {
+              '&::placeholder': { color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[5] },
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[3],
+            },
+          })}
         />
         <Center>
           <Stack align="center" spacing="xs">

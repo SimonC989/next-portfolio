@@ -1,8 +1,13 @@
 import React from 'react';
-import { ActionIcon, Group, Tooltip } from '@mantine/core';
+import { ActionIcon, Group, Tooltip, useMantineColorScheme } from '@mantine/core';
 import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin } from '@tabler/icons';
 
-const SocialGroup: React.FC = (): JSX.Element => {
+export interface ISocialGroupProps {
+  contact?: boolean
+}
+
+const SocialGroup: React.FC<ISocialGroupProps> = ({ contact }): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   const list = [
     {
       label: 'GitHub',
@@ -33,10 +38,16 @@ const SocialGroup: React.FC = (): JSX.Element => {
         {list.map(social =>
           <Tooltip label={social.label} key={social.label}>
             <ActionIcon
-              color="dark.2"
+              color={contact ? (colorScheme === 'dark' ? 'dark.2' : 'dark.6') : 'dark.2'}
               variant="subtle"
               size="lg"
-              sx={(theme) => ({ '&:hover': { backgroundColor: theme.colors.dark[5] } })}
+              sx={(theme) => ({
+                '&:hover':
+                  contact ?
+                    { backgroundColor: colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[4] }
+                    :
+                    { backgroundColor: theme.colors.dark[5] },
+              })}
               component="a"
               href={social.link}
             >
