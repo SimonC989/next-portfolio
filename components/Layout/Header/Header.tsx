@@ -21,7 +21,7 @@ const Header: React.FC = (): JSX.Element => (
         <Group>
           <HeaderButton href="#home">Home</HeaderButton>
           <HeaderButton href="#projects">Projects</HeaderButton>
-          <HeaderButton href="#test">Test</HeaderButton>
+          <HeaderButton href="#contact">Contact</HeaderButton>
           <ColorSchemeToggle />
         </Group>
       </Group>

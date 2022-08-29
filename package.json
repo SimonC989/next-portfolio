@@ -19,6 +19,7 @@
     "storybook:build": "build-storybook"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.10.0",
     "@emotion/server": "^11.10.0",
     "@mantine/carousel": "5.2.0",
