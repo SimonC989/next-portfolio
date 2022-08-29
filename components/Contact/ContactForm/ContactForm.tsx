@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Center, Stack, Textarea, TextInput } from '@mantine/core';
+import { Box, Button, Center, Stack, Textarea, TextInput, Text } from '@mantine/core';
 import { send } from '@emailjs/browser';
 import { IconCheck } from '@tabler/icons';
 import { useTimeout } from '@mantine/hooks';
@@ -56,7 +56,7 @@ const ContactForm: React.FC = (): JSX.Element => {
   return (
     <Box
       sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[3],
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[4],
         borderRadius: '20px',
         width: '50%',
       })}
@@ -97,7 +97,7 @@ const ContactForm: React.FC = (): JSX.Element => {
           mb="xl"
         />
         <Center>
-          <Stack>
+          <Stack align="center" spacing="xs">
             <Button
               type="submit"
               variant="light"
@@ -107,9 +107,16 @@ const ContactForm: React.FC = (): JSX.Element => {
             >
               Send
             </Button>
-            <div style={{ color: 'red' }}>
-              {sentError || null}
-            </div>
+            {sentError ? (
+              <Text
+                sx={(theme) => ({
+                  color: theme.colorScheme === 'dark' ? theme.colors.red[6] : theme.colors.red[4],
+                })}
+                p={8}
+              >
+                {sentError}
+              </Text>
+            ) : null }
           </Stack>
         </Center>
       </form>
