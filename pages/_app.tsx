@@ -60,3 +60,16 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('mantine-color-scheme', ctx) || 'dark',
 });
+
+// components: {
+//   Divider: {
+//     styles: (theme) => ({
+//       root: {
+//         borderColor:
+//           theme.colorScheme === 'dark'
+//             ? theme.colors.pink[5]
+//             : theme.colors.lime[5],
+//       },
+//     }),
+//   },
+// },

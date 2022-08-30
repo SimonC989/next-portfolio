@@ -49,6 +49,7 @@ const ContactForm: React.FC = (): JSX.Element => {
       })
       .catch((err) => {
         // console.log('FAILED...', err);
+        setLoading(false);
         setSentError(err);
       });
   };
@@ -56,12 +57,11 @@ const ContactForm: React.FC = (): JSX.Element => {
   return (
     <Box
       sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[4],
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[5],
         borderRadius: '20px',
         width: '50%',
       })}
       p="md"
-      my="xl"
     >
       <form onSubmit={sendEmail}>
         <TextInput
