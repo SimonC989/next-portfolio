@@ -44,7 +44,7 @@ const SocialGroup: React.FC<ISocialGroupProps> = ({ contact }): JSX.Element => {
               sx={(theme) => ({
                 '&:hover':
                   contact ?
-                    { backgroundColor: colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[4] }
+                    { backgroundColor: colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.dark[3] }
                     :
                     { backgroundColor: theme.colors.dark[5] },
               })}

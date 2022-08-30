@@ -85,9 +85,37 @@ const Projects: React.FC = (): JSX.Element => {
       </Modal>
       <Center mb="md">
         {amountShown === 3 ? (
-          <Button variant="subtle" onClick={() => showMore()} rightIcon={<IconChevronDown size={20} />}>Show More</Button>
+          <Button
+            variant="subtle"
+            onClick={() => showMore()}
+            rightIcon={<IconChevronDown size={20} />}
+            styles={(theme) => ({
+              root: {
+                color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[7],
+                '&:hover': {
+                  backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[3],
+                },
+              },
+            })}
+          >
+            Show More
+          </Button>
           ) : (
-          <Button variant="subtle" onClick={() => showLess()} rightIcon={<IconChevronUp size={20} />}>Show Less</Button>
+          <Button
+            variant="subtle"
+            onClick={() => showLess()}
+            rightIcon={<IconChevronUp size={20} />}
+            styles={(theme) => ({
+              root: {
+                color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[7],
+                '&:hover': {
+                  backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.dark[3],
+                },
+              },
+            })}
+          >
+            Show Less
+          </Button>
         )}
       </Center>
     </Box>
