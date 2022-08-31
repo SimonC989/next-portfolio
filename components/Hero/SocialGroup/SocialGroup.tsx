@@ -2,7 +2,7 @@ import React from 'react';
 import { ActionIcon, Group, Tooltip, useMantineColorScheme } from '@mantine/core';
 import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin } from '@tabler/icons';
 
-export interface ISocialGroupProps {
+interface ISocialGroupProps {
   contact?: boolean
 }
 

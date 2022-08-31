@@ -4,10 +4,10 @@ import { IconChevronDown, IconChevronUp } from '@tabler/icons';
 import { EmblaCarouselType } from 'embla-carousel-react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { projectList } from '../../lib/projectList';
-import Project, { IModalCarousel } from './Project/Project';
+import { IImageList, projectList } from '../../lib/projectList';
+import Project from './Project/Project';
 
-export function useAnimationOffsetEffect(transitionDuration: number, embla?: EmblaCarouselType) {
+function useAnimationOffsetEffect(transitionDuration: number, embla?: EmblaCarouselType) {
   useEffect(() => {
     if (embla) {
       window.setTimeout(() => {
@@ -20,7 +20,7 @@ export function useAnimationOffsetEffect(transitionDuration: number, embla?: Emb
 const Projects: React.FC = (): JSX.Element => {
   const [amountShown, setAmountShown] = useState(3);
   const [active, setActive] = useState(false);
-  const [modalCarousel, setModalCarousel] = useState<IModalCarousel[]>([]);
+  const [modalCarousel, setModalCarousel] = useState<IImageList[]>([]);
   const [embla, setEmbla] = useState<EmblaCarouselType>();
   const TRANSITION_DURATION = 200;
 

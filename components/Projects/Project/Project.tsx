@@ -1,17 +1,12 @@
 import { Box, Spoiler, Title, Text, Anchor, Tooltip, ActionIcon, Group } from '@mantine/core';
 import { IconBrandGithub } from '@tabler/icons';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import React from 'react';
-import { IProjectList } from '../../../lib/projectList';
-
-export type IModalCarousel = {
-  image: string | StaticImageData,
-  alt: string,
-};
+import { IImageList, IProjectList } from '../../../lib/projectList';
 
 interface IProjectProps {
   project: IProjectList,
-  setModalCarousel: React.Dispatch<React.SetStateAction<IModalCarousel[]>>,
+  setModalCarousel: React.Dispatch<React.SetStateAction<IImageList[]>>,
   setActive: React.Dispatch<React.SetStateAction<boolean>>,
   index: number,
 }
@@ -45,7 +40,7 @@ const Project: React.FC<IProjectProps> = (
         {project.title}
       </Title>
       <Spoiler
-        maxHeight={120}
+        maxHeight={135}
         hideLabel="Show Less"
         showLabel="Show More"
         styles={(theme) => ({
@@ -57,7 +52,7 @@ const Project: React.FC<IProjectProps> = (
         })}
       >
         <div>
-          <Text mb="md">
+          <Text mb="sm">
             {project.description.split('\n').map((paragraph: string, j: number) =>
               <p style={{ margin: '0 0 8px' }} key={project.title + j}>{paragraph}</p>
             )}
@@ -96,7 +91,7 @@ const Project: React.FC<IProjectProps> = (
         width={850}
         onClick={() => {
           setActive(true);
-          setModalCarousel(project.imageList as IModalCarousel[]);
+          setModalCarousel(project.imageList as IImageList[]);
         }}
       />
     </div>

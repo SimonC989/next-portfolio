@@ -34,7 +34,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <meta name="description" content="Portfolio presenting projects done by Simon Chan" />
         <meta property="og:title" content="Portfolio" />
         <meta property="og:image" content="Portfolio.png" />
-        {/* <meta property="og:description" content="Description that will show in the preview" /> */}
+        <meta property="og:description" content="My Portfolio" />
         {/* <meta property="og:url" content="//www.example.com/URL of the article" /> */}
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
@@ -64,11 +64,25 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
 // components: {
 //   Divider: {
 //     styles: (theme) => ({
+//       label: {
+//         '&::after': {
+//           borderTopColor:
+//             theme.colorScheme === 'dark'
+//               ? theme.colors.dark[4]
+//               : theme.colors.dark[6],
+//         },
+//         '&::before': {
+//           borderTopColor:
+//             theme.colorScheme === 'dark'
+//               ? theme.colors.dark[4]
+//               : theme.colors.dark[6],
+//         },
+//       },
 //       root: {
-//         borderColor:
+//         borderTopColor:
 //           theme.colorScheme === 'dark'
-//             ? theme.colors.pink[5]
-//             : theme.colors.lime[5],
+//           ? `${theme.colors.dark[4]} !important`
+//           : `${theme.colors.dark[6]} !important`,
 //       },
 //     }),
 //   },

@@ -20,15 +20,17 @@ export interface ISocial {
   icon?: TablerIcon,
 }
 
+export type IImageList = {
+  image: StaticImageData,
+  alt: string,
+};
+
 export interface IProjectList {
   title: string,
   description: string,
   image: StaticImageData,
   alt: string,
-  imageList?: {
-    image: StaticImageData,
-    alt: string
-  }[],
+  imageList?: IImageList[],
   url: ISocial[],
   github: ISocial[],
 }
@@ -52,7 +54,7 @@ export const projectList = [
   {
     title: 'Admin Dashboard',
     description:
-      'A admin dashboard made to learn tailwind since I wanted to move away from styled-components, along with try out Syncfusion for UI components. This is the first project made outside of smaller components since coming back to coding and learning hooks since React moved away from class components. ',
+      'A admin dashboard made to learn tailwind since I wanted to move away from styled-components, along with trying out Syncfusion for UI components. This is the first project made outside of smaller components since coming back to coding and learning hooks since React moved away from class components. ',
     image: AdminDashboard,
     alt: 'Admin Dashboard landing page',
     imageList: [
@@ -144,9 +146,9 @@ export const projectList = [
   },
   {
     title: 'BoardNite',
-    description: '',
+    description: 'BoardNite was a two day MVP sprint. I decided on a scoreboard since it felt like a nice to have for the amount of rounds and differernt titles we were playing at the time. ',
     image: BoardNite,
-    alt: '',
+    alt: 'BoardNite landing page',
     imageList: [
       {
         image: BoardNite,
