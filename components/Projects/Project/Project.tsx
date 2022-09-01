@@ -57,7 +57,7 @@ const Project: React.FC<IProjectProps> = (
               <p style={{ margin: '0 0 8px' }} key={project.title + j}>{paragraph}</p>
             )}
           </Text>
-          <Group align="flex-end" mb="md">
+          <Group align="flex-end">
             {project.github.map((github) =>
               <Tooltip label={github.label} key={github.label}>
                 <ActionIcon
