@@ -78,7 +78,7 @@ const Projects: React.FC = (): JSX.Element => {
           {modalCarousel?.map((image, i) =>
             <Carousel.Slide key={i}>
               <Text pb="xs">{image.alt}</Text>
-              <Image src={image.image} height={900} width={1600} />
+              <Image src={image.image} height={900} width={1600} placeholder="blur" />
             </Carousel.Slide>
           )}
         </Carousel>

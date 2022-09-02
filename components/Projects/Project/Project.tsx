@@ -89,6 +89,7 @@ const Project: React.FC<IProjectProps> = (
         alt={project.alt}
         height={500}
         width={850}
+        placeholder="blur"
         onClick={() => {
           setActive(true);
           setModalCarousel(project.imageList as IImageList[]);

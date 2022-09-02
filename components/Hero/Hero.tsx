@@ -22,7 +22,14 @@ const Hero: React.FC = (): JSX.Element => (
   >
     <div className={styles.photoGroup}>
       <div style={{ position: 'relative', width: '400px', height: '400px' }}>
-        <Image src={ProfilePhoto} layout="fill" objectFit="cover" style={{ borderRadius: '20px', zIndex: 1 }} priority />
+        <Image
+          src={ProfilePhoto}
+          layout="fill"
+          objectFit="cover"
+          style={{ borderRadius: '20px', zIndex: 1 }}
+          placeholder="blur"
+          priority
+        />
       </div>
       <div className={styles.avatarBg} />
     </div>
