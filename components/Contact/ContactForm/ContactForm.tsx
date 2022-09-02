@@ -21,10 +21,6 @@ const ContactForm: React.FC = (): JSX.Element => {
     }
   }, [sentSuccessful]);
 
-  useEffect(() => {
-    console.log(form);
-  }, [form]);
-
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -44,8 +40,8 @@ const ContactForm: React.FC = (): JSX.Element => {
       form,
       'oO9xYAPQrYSSP2O8I'
     )
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+      .then(() => {
+        // console.log('SUCCESS!', response.status, response.text);
         setLoading(false);
         setSentSuccessful(true);
         setForm({
@@ -56,7 +52,7 @@ const ContactForm: React.FC = (): JSX.Element => {
         setSentError('');
       })
       .catch((err) => {
-        console.log('FAILED...', err);
+        // console.log('FAILED...', err);
         setLoading(false);
         setSentError(err);
       });
