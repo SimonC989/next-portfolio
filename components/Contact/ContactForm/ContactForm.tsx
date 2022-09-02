@@ -13,7 +13,7 @@ const ContactForm: React.FC = (): JSX.Element => {
   const [loading, setLoading] = useState(false);
   const [sentSuccessful, setSentSuccessful] = useState(false);
   const [sentError, setSentError] = useState('');
-  const { start } = useTimeout(() => setSentSuccessful(false), 3000);
+  const { start } = useTimeout(() => setSentSuccessful(false), 4000);
 
   useEffect(() => {
     if (sentSuccessful === true) {
@@ -21,8 +21,16 @@ const ContactForm: React.FC = (): JSX.Element => {
     }
   }, [sentSuccessful]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value });
   };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -36,8 +44,8 @@ const ContactForm: React.FC = (): JSX.Element => {
       form,
       'oO9xYAPQrYSSP2O8I'
     )
-      .then(() => {
-        // console.log('SUCCESS!', response.status, response.text);
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
         setLoading(false);
         setSentSuccessful(true);
         setForm({
@@ -48,7 +56,7 @@ const ContactForm: React.FC = (): JSX.Element => {
         setSentError('');
       })
       .catch((err) => {
-        // console.log('FAILED...', err);
+        console.log('FAILED...', err);
         setLoading(false);
         setSentError(err);
       });
@@ -70,7 +78,8 @@ const ContactForm: React.FC = (): JSX.Element => {
           placeholder="Name"
           radius="md"
           error=""
-          onChange={handleChange}
+          value={form.userName}
+          onChange={handleInput}
           required
           mb="md"
           sx={(theme) => ({
@@ -87,7 +96,8 @@ const ContactForm: React.FC = (): JSX.Element => {
           placeholder="hello@awesome.com"
           radius="md"
           error=""
-          onChange={handleChange}
+          value={form.userEmail}
+          onChange={handleInput}
           required
           mb="md"
           sx={(theme) => ({
@@ -100,6 +110,7 @@ const ContactForm: React.FC = (): JSX.Element => {
         <Textarea
           placeholder="Say Hi! Let me know you're favorite boardgame."
           label="Message"
+          name="message"
           radius="md"
           error=""
           autosize
@@ -107,6 +118,8 @@ const ContactForm: React.FC = (): JSX.Element => {
           maxRows={6}
           required
           mb="xl"
+          value={form.message}
+          onChange={handleTextArea}
           styles={(theme) => ({
             input: {
               '&::placeholder': { color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.dark[5] },
