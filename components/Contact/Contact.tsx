@@ -44,7 +44,7 @@ const Contact: React.FC = (): JSX.Element => {
           </Text>
           <Divider
             mb="md"
-            // color={getDividerColor()}
+            color={getDividerColor()}
           />
           <div>
             <Group mb="sm">

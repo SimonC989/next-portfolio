@@ -4,7 +4,7 @@ import { IconChevronDown, IconChevronUp } from '@tabler/icons';
 import { EmblaCarouselType } from 'embla-carousel-react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { IImageList, projectList } from '../../lib/projectList';
+import { IImageList, projectList } from '../../constants/projectList';
 import Project from './Project/Project';
 
 function useAnimationOffsetEffect(transitionDuration: number, embla?: EmblaCarouselType) {

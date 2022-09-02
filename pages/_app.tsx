@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineThemeOverride } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import Layout from '../components/Layout/Layout';
-import '../lib/global.css';
+import '../styles/global.css';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;

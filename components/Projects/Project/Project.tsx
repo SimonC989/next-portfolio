@@ -2,7 +2,7 @@ import { Box, Spoiler, Title, Text, Anchor, Tooltip, ActionIcon, Group } from '@
 import { IconBrandGithub } from '@tabler/icons';
 import Image from 'next/image';
 import React from 'react';
-import { IImageList, IProjectList } from '../../../lib/projectList';
+import { IImageList, IProjectList } from '../../../constants/projectList';
 
 interface IProjectProps {
   project: IProjectList,
