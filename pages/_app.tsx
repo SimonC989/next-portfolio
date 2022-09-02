@@ -35,7 +35,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <meta property="og:title" content="Portfolio" />
         <meta property="og:image" content="Portfolio.png" />
         <meta property="og:description" content="My Portfolio" />
-        {/* <meta property="og:url" content="//www.example.com/URL of the article" /> */}
+        <meta property="og:url" content="simonchanportfolio.vercel.app" />
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
 
