@@ -16,7 +16,7 @@ const SocialGroup: React.FC<ISocialGroupProps> = ({ contact }): JSX.Element => {
     },
     {
       label: 'GitLab',
-      link: 'https://linkedin.com/',
+      link: 'https://gitlab.com/SimonC989',
       icon: <IconBrandGitlab size={48} />,
     },
     {
