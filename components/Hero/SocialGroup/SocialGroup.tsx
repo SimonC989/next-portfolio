@@ -21,7 +21,7 @@ const SocialGroup: React.FC<ISocialGroupProps> = ({ contact }): JSX.Element => {
     },
     {
       label: 'LinkedIn',
-      link: 'https://linkedin.com/',
+      link: 'https://www.linkedin.com/in/simonc989/',
       icon: <IconBrandLinkedin size={48} />,
     },
   ];
