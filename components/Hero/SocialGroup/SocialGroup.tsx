@@ -50,6 +50,7 @@ const SocialGroup: React.FC<ISocialGroupProps> = ({ contact }): JSX.Element => {
               })}
               component="a"
               href={social.link}
+              target="_blank"
             >
               {social.icon}
             </ActionIcon>
