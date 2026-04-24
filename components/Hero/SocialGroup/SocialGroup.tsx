@@ -11,7 +11,7 @@ const SocialGroup: React.FC<ISocialGroupProps> = ({ contact }): JSX.Element => {
   const list = [
     {
       label: 'GitHub',
-      link: 'https://github.com/',
+      link: 'https://github.com/SimonC989',
       icon: <IconBrandGithub size={48} />,
     },
     {
